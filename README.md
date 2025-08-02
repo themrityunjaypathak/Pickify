@@ -1,4 +1,4 @@
-<h1 align='center'>Pickify : Movie Recommender System</h1>
+<h1 align='center'>Pickify</h1>
 
 <img src='https://github.com/user-attachments/assets/402f6ff0-b0f0-4382-827b-b7b06e33961d' title='Banner'>
 
