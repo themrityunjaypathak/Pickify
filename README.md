@@ -248,7 +248,7 @@ Follow these steps carefully to setup and run the project on your local machine 
 ### 1. Clone the Repository
 First, you need to download the project from GitHub to your local system.
 ```bash
-git clone https://github.com/TheMrityunjayPathak/movie-recommender-system.git
+git clone https://github.com/TheMrityunjayPathak/Pickify.git
 ```
 
 ### 2. Setup a Virtual Environment
