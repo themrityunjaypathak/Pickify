@@ -20,7 +20,7 @@
 - With the rise of streaming services, viewers now have access to thousands of movies across platforms.
 - As a result, many viewers spend more time browsing than actually watching.
 - This problem can lead to frustration, lower satisfaction and less time spent on the platform.
-- Which can impact both the user experience and business performance.
+- Ultimately, this impacts both user experience and business performance.
 
 <hr>
 
@@ -336,14 +336,14 @@ deactivate
 movie_recommender_system/
 |
 ├── .streamlit/             # Streamlit Configuration Files
-├── raw_data/               # Original Datasets
-├── clean_data/             # Preprocessed and Cleaned Datasets
+├── raw_data/               # Original Dataset
+├── clean_data/             # Preprocessed and Cleaned Dataset
 ├── notebooks/              # Jupyter Notebooks for Preprocessing and Vectorization
 ├── images/                 # Images used in Streamlit Application
 ├── utils/                  # Modular Python Scripts
 ├── app.py                  # Main Streamlit Application
 ├── requirements.txt        # List of required libraries for the Project
-├── README.md               # Detailed documentation of Project
+├── README.md               # Detailed documentation of the Project
 ├── LICENSE                 # License specifying permissions and usage rights
 ├── .gitignore              # All files and folders excluded from Git Tracking
 ```
