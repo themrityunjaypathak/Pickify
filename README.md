@@ -26,7 +26,7 @@
 
 ## Overview
 - Developed a content-based movie recommender system with clean coding practices, modular design and proper version control, deployed as a user-friendly web application.
-- Processes metadata from 5,000+ movies including title, keywords, genres, cast, crew and overview to recommend the top 5 similar movies based on a user-selected title.
+- It processes metadata from 5,000+ movies to recommend the top 5 similar movies based on a user-selected title.
 - The system uses techniques like [`CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for text vectorization and [`cosine_similarity`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) to find similarity between movies.
 
 <hr>
