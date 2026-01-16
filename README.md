@@ -6,11 +6,6 @@
     <img src="https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white" />
   </a>
 
-  <!-- License -->
-  <a href="./LICENSE" target="_blank">
-    <img src="https://img.shields.io/badge/License-MIT-2ea44f?style=flat&logo=open-source-initiative&logoColor=white" />
-  </a>
-
   <!-- Python -->
   <a href="https://www.python.org/" target="_blank">
     <img src="https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white" />
@@ -29,6 +24,11 @@
   <!-- Scikit-learn -->
   <a href="https://scikit-learn.org/stable/" target="_blank">
     <img src="https://img.shields.io/badge/scikit--learn-v1.5-F7931E?style=flat&logo=scikit-learn&logoColor=white" />
+  </a>
+
+  <!-- Git -->
+  <a href="https://git-scm.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white" />
   </a>
 
   <!-- TMDB -->
@@ -139,18 +139,18 @@ flowchart LR
 
 ### 1. Modular Design with Reusable Code
 - The project follows a modular approach by organizing modules into a dedicated `utils/` directory.
-- Each module in the `utils/` directory is responsible for a specific task and includes:
+- Each module in the `utils/` directory is responsible for a specific task and includes :
   - Clear docstrings explaining functionality, expected inputs/outputs, returns, and raises.
   - Robust exception handling for better debugging and maintainability.
-- Following the DRY (Don't Repeat Yourself) principle, this design:
+- Following the DRY (Don't Repeat Yourself) principle, this design :
   - Reuses functions across notebooks and scripts without rewriting code.
   - Saves development time and reduces redundancy.
-- The `utils/` directory also includes an `__init__.py` file, which serves a few important purposes in Python:
+- The `utils/` directory also includes an `__init__.py` file, which serves a few important purposes in Python :
   - The `__init__.py` file tells Python to treat the directory as a package, not just a regular folder.
   - Without it, Python won't recognize the folder as a package.
 
 ### Add `utils` to PYTHONPATH
-- To access these utility modules anywhere in the project, add the following snippet at the top of your script:
+- To access these utility modules anywhere in the project, add the following snippet at the top of your script :
 ```python
 import sys, os
 sys.path.append(os.path.abspath("../utils"))
@@ -173,20 +173,20 @@ def export_as_csv(dataframe, folder_name, file_name):
     Parameters:
         dataframe (pd.DataFrame): The DataFrame to export.
         folder_name (str): Name of the folder where CSV file will be saved.
-        file_name (str): Name of the CSV file. Must end with '.csv' extension.
+        file_name (str): Name of the CSV file. Must end with ".csv" extension.
 
     Returns:
         None
 
     Raises:
         TypeError: If input is not a pandas DataFrame.
-        ValueError: If file_name does not end with '.csv' extension.
+        ValueError: If file_name does not end with ".csv" extension.
         FileNotFoundError: If folder does not exist.
     """
     try:
         if not isinstance(dataframe, pd.DataFrame):
             raise TypeError("Input must be a pandas DataFrame.")
-        if not file_name.lower().endswith('.csv'):
+        if not file_name.lower().endswith(".csv"):
             raise ValueError("File name must end with '.csv' extension.")
         
         current_dir = os.getcwd()
@@ -235,7 +235,7 @@ file_path = os.path.join(folder_path, file_name)
 
 ### 3. Clean Commit History with `nbstripout`
 - Integrated [`nbstripout`](https://github.com/kynan/nbstripout) with Git to automatically remove Jupyter notebook outputs before committing.
-- It helps maintain a clean and readable commit history by:
+- It helps maintain a clean and readable commit history by :
   - Avoiding large, unreadable diffs caused by cell outputs.
   - Keeping only code and markdown content under version control.
 - Especially useful when pushing to remote repositories, as it reduces clutter and improves readability.
@@ -288,11 +288,11 @@ api_key = st.secrets["tmdb"]["api_key"]
 - While Git LFS (Large File Storage) is one option, it can be complex to configure and manage.
 
 ### Solution with `gdown`
-- To address this issue, the matrix file is:
+- To address this issue, the matrix file is :
   - Uploaded to Google Drive.
   - Downloaded at runtime using the [`gdown`](https://pypi.org/project/gdown/) library.
   - Stored locally on the Streamlit server when the app runs.
-- This approach ensures:
+- This approach ensures :
   - Compatibility with GitHub without needing Git LFS.
   - Hassle-free experience for cloning the repository or running the app across different environments.
 
@@ -305,23 +305,23 @@ import os
 import gdown
 import pickle
 
-# Step 1: Define the Google Drive file ID
-file_id = 'your_file_id_here'
+# Step 1 : Define the Google Drive file ID
+file_id = "your_file_id_here"
 
-# Step 2: Set the desired file name for the downloaded file
-output = 'similarity.pkl'
+# Step 2 : Set the desired file name for the downloaded file
+output = "similarity.pkl"
 
-# Step 3: Construct the direct download URL from the file ID
-url = f'https://drive.google.com/uc?id={file_id}'
+# Step 3 : Construct the direct download URL from the file ID
+url = f"https://drive.google.com/uc?id={file_id}"
 
-# Step 4: Check if the file already exists locally
+# Step 4 : Check if the file already exists locally
 # If not, download it from Google Drive using gdown
 if not os.path.exists(output):
     gdown.download(url, output, quiet=False)
 
-# Step 5: Open the downloaded file in read binary mode
+# Step 5 : Open the downloaded file in read binary mode
 # and load the similarity matrix using pickle
-with open('similarity.pkl', 'rb') as f:
+with open("similarity.pkl", "rb") as f:
     similarity = pickle.load(f)
 ```
 </details>
