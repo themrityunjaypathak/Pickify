@@ -3,37 +3,37 @@
 <p align="center">
   <!-- Live Demo -->
   <a href="https://pickify.streamlit.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white" />
+    <img src="https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white">
   </a>
 
   <!-- Python -->
   <a href="https://www.python.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white">
   </a>
 
   <!-- Pandas -->
   <a href="https://pandas.pydata.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Pandas-v2.2-150458?style=flat&logo=pandas&logoColor=white" />
+    <img src="https://img.shields.io/badge/Pandas-v2.2-150458?style=flat&logo=pandas&logoColor=white">
   </a>
 
   <!-- Streamlit -->
   <a href="https://streamlit.io/" target="_blank">
-    <img src="https://img.shields.io/badge/Streamlit-v1.44-FF4B4B?style=flat&logo=streamlit&logoColor=white" />
+    <img src="https://img.shields.io/badge/Streamlit-v1.44-FF4B4B?style=flat&logo=streamlit&logoColor=white">
   </a>
 
   <!-- Scikit-learn -->
   <a href="https://scikit-learn.org/stable/" target="_blank">
-    <img src="https://img.shields.io/badge/scikit--learn-v1.5-F7931E?style=flat&logo=scikit-learn&logoColor=white" />
+    <img src="https://img.shields.io/badge/scikit--learn-v1.5-F7931E?style=flat&logo=scikit-learn&logoColor=white">
   </a>
 
   <!-- Git -->
   <a href="https://git-scm.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white" />
+    <img src="https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white">
   </a>
 
   <!-- TMDB -->
   <a href="https://developer.themoviedb.org/docs" target="_blank">
-    <img src="https://img.shields.io/badge/TMDB-API-01B4E4?style=flat&logo=themoviedatabase&logoColor=white" />
+    <img src="https://img.shields.io/badge/TMDB-API-01B4E4?style=flat&logo=themoviedatabase&logoColor=white">
   </a>
 </p>
 
@@ -44,11 +44,11 @@
 - [Overview](#overview)
 - [How it Works](#how-it-works)
 - [Workflow](#workflow)
+- [Impact](#impact)
 - [Features](#features)
 - [Setup](#setup)
 - [Folder Structure](#folder-structure)
 - [Challenges & Solutions](#challenges--solutions)
-- [Impact](#impact)
 - [Future Improvements](#future-improvements)
 - [License](#license)
 
@@ -57,7 +57,7 @@
 ## Problem Statement
 - With the rise of streaming services, viewers now have access to thousands of movies across platforms.
 - As a result, many viewers spend more time browsing than actually watching.
-- This problem can lead to frustration, lower satisfaction, and reduced watch time on the platform.
+- This problem can lead to frustration, lower satisfaction and reduced watch time on the platform.
 - Ultimately, this impacts both user experience and business performance.
 
 <hr>
@@ -65,7 +65,7 @@
 ## Overview
 - Built a content-based movie recommender system with a modular design and proper version control.
 - It processes metadata from 5,000+ movies to recommend the top 5 similar movies based on a user-selected title.
-- System uses [`CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for text vectorization and [`cosine_similarity`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) to compute movie similarity.
+- The system uses [`CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for text vectorization and [`cosine_similarity`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) to compute movie similarity.
 
 <hr>
 
@@ -73,28 +73,45 @@
 
 - The dataset contains metadata for each movie, including title, keywords, genres, cast, crew, and overview.
 
+<details>
+<summary>Click Here</summary>
+&nbsp;
+  
 <img src='https://github.com/user-attachments/assets/7196153c-f0a8-46cb-b47f-204b5db0cf46' title='Screenshot-1'>
+</details>
 
 - All the features are combined into a new column called `tags` to create a unified representation for each movie.
 
+<details>
+<summary>Click Here</summary>
+&nbsp;
+
 <img src='https://github.com/user-attachments/assets/9f019c4c-0c1b-4f87-acdc-1253dd791eea' title='Screenshot-2'>
+</details>
 
 - Text preprocessing is applied to the `tags` column :
   - All text is converted to lowercase (e.g., `"Action, Thriller"` becomes `"action, thriller"`).
   - Spaces between words are removed (e.g., `"action movie"` becomes `"actionmovie"`).
   - Stemming is performed to reduce words to their root form (e.g., `"running"` becomes `"run"`).
-  
+
+<details>
+<summary>Click Here</summary>
+&nbsp;
+
 <img src='https://github.com/user-attachments/assets/54710f7c-b354-480f-b4be-b21b6333bacb' title='Screenshot-3'>
+</details>
 
 - `CountVectorizer` is used to convert the `tags` column into numerical feature vectors.
 - `cosine_similarity` is used to calculate similarity between the vector representations of all the movies.
 - The resulting similarity matrix is serialized and saved as a `.pkl` file for efficient loading during recommendation.
 - A Streamlit web application is built to provide an interactive interface for movie selection and recommendation :
   - User selects a movie from the dropdown list.
-  - System recommend top 5 most similar movies based on the similarity scores.
+  - The system recommends the top 5 most similar movies based on the similarity scores.
 - Movie posters are fetched using the TMDB API to enhance the visual appeal of the recommendations.
- 
-<a href='https://pickify.streamlit.app/' title='Pickify'><img src='https://github.com/user-attachments/assets/b2c8e685-565d-4a09-a49a-4323cefd8852'/></a>
+
+Access the Streamlit Web Application [here](https://pickify.streamlit.app/) or Click on the Image below.
+
+<a href='https://pickify.streamlit.app/' title='Pickify'><img src='https://github.com/user-attachments/assets/7f4aa5bf-c5e7-42b0-8d13-a305fabb8c1b'/></a>
 
 <hr>
 
@@ -132,6 +149,14 @@ flowchart LR
   class A,B,C,D,E,F,G,H,I,J,K,L,M step;
   class DP,FE,RE,APP block;
 ```
+
+<hr>
+
+## Impact
+- Delivered movie recommendations in under 3 seconds, ensuring a fast and smooth user experience.
+- Reduced the time users spend browsing by suggesting the top 5 most similar movies for any selected title.
+- Deployed the system as a Streamlit web app, used by 100+ users to discover personalized movie suggestions.
+- Demonstrated how a notebook model can move from experimentation to a live recommendation system.
 
 <hr>
 
@@ -248,11 +273,14 @@ api_key = st.secrets["tmdb"]["api_key"]
 > [!CAUTION]
 > The `secrets.toml` file should not be pushed to a public repository to avoid exposing sensitive credentials.
 >
-> You can add it to .gitignore to ensure it's excluded from version control.
+> You can add it to `.gitignore` to ensure it's excluded from version control.
 > 
 > When deploying to Streamlit, the API key must be added via the GUI, not through the `secrets.toml` file.
 
+<details>
+<summary>Click Here</summary>
 <img src='https://github.com/user-attachments/assets/529ae232-8635-479d-9b8f-d089b5688e7a' title='Streamlit UI'>
+</details>
 
 <hr>
 
@@ -415,10 +443,10 @@ Pickify/
 ## Challenges & Solutions
 
 #### Challenge 1 : Dynamic File Paths
-- **Solution :** Used Python's `os` module for dynamic and platform-independent path handling.
+- **Solution :** Used Python's `os` module for dynamic, platform-independent path handling.
 
 #### Challenge 2 : Managing Large Files
-- **Solution :** Used Google Drive to host the serialized similarity matrix and downloaded it with `gdown` at runtime.
+- **Solution :** Used Google Drive to host the serialized similarity matrix and downloaded it at runtime using `gdown`.
 
 #### Challenge 3 : Hiding Sensitive API Keys
 - **Solution :** Used Streamlit `st.secrets` to securely store and access TMDB API credentials.
@@ -428,35 +456,28 @@ Pickify/
 
 <hr>
 
-## Impact
-- Deployed the system as a Streamlit web app, used by 100+ users to discover personalized recommendations.
-- Increased user engagement and watch time through fast recommendations in under 3 seconds.
-- Reduced the time users spend choosing what to watch by instantly recommending the top 5 similar movies.
-
-<hr>
-
 ## Future Improvements
 
 #### 1. Enhanced Tag Generation
-- Currently, tags are generated equally from cast, crew, keywords, genres, and overview.
-- We can improve this by applying feature importance or weighting certain features.
-- This can be done by multiplying certain column values to give them higher importance.
+- Currently, tags are generated with equal importance from cast, crew, keywords, genres, and overview.
+- This can be improved by applying feature weighting to give more importance to influential attributes.
+- For example, certain columns can be scaled or repeated to increase their impact on similarity calculations.
 
 #### 2. User Preferences Integration
-- Add user-based data to provide more personalized recommendations.
-- Collaborative filtering can suggest movies based on similar user behaviour.
-- This will make the recommender system more user-centric.
+- Introduce user-based data to generate more personalized recommendations.
+- Collaborative filtering can suggest movies based on similarities between user preferences and behavior.
+- This would make the recommender system more adaptive and user-centric.
 
 #### 3. Real-Time Data Updates
-- Fetch movie data from external sources to ensure the movie database is always up to date.
-- This would allow recommending the latest releases and removing outdated movies automatically.
+- Fetch movie data from external sources to keep the database continuously updated.
+- This would enable recommending newly released movies and automatically removing outdated content.
 
 #### 4. Improved Similarity Metrics
-- Instead of just cosine similarity, we can experiment with other advanced similarity measures,
-- Like Jaccard similarity, TF-IDF, or Word2Vec for capturing semantic meaning in movie descriptions.
+- Instead of relying only on cosine similarity, experiment with additional similarity techniques.
+- Methods such as Jaccard similarity, TF-IDF, or Word2Vec could better capture semantic relationships.
 
 #### 5. Interactive User Interface
-- Enhance the user experience by providing filters to choose movies based on genres, actors, or directors.
+- Improve the user experience by adding filters to explore movies based on genres, actors, or directors.
 
 <hr>
 
