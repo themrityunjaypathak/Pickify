@@ -111,7 +111,7 @@
 
 Access the Streamlit Web Application [here](https://pickify.streamlit.app/) or Click on the Image below.
 
-<a href='https://pickify.streamlit.app/' title='Pickify'><img src='https://github.com/user-attachments/assets/7f4aa5bf-c5e7-42b0-8d13-a305fabb8c1b'/></a>
+<a href='https://pickify.streamlit.app/' title='Pickify'><img src='https://github.com/user-attachments/assets/f25be709-bae6-4aaf-8f80-569d26f835a4'/></a>
 
 <hr>
 
