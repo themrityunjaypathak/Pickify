@@ -1,43 +1,36 @@
 <h2 align='center'>Pickify : Movie Recommender System</h2>
 
 <p align="center">
-  <!-- Live Demo -->
   <a href="https://pickify.streamlit.app/" target="_blank">
     <img src="https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white">
   </a>
 
-  <!-- Python -->
   <a href="https://www.python.org/" target="_blank">
     <img src="https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white">
   </a>
 
-  <!-- Pandas -->
   <a href="https://pandas.pydata.org/" target="_blank">
     <img src="https://img.shields.io/badge/Pandas-v2.2-150458?style=flat&logo=pandas&logoColor=white">
   </a>
 
-  <!-- Streamlit -->
   <a href="https://streamlit.io/" target="_blank">
     <img src="https://img.shields.io/badge/Streamlit-v1.44-FF4B4B?style=flat&logo=streamlit&logoColor=white">
   </a>
 
-  <!-- Scikit-learn -->
   <a href="https://scikit-learn.org/stable/" target="_blank">
     <img src="https://img.shields.io/badge/scikit--learn-v1.5-F7931E?style=flat&logo=scikit-learn&logoColor=white">
   </a>
 
-  <!-- Git -->
   <a href="https://git-scm.com/" target="_blank">
     <img src="https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white">
   </a>
 
-  <!-- TMDB -->
   <a href="https://developer.themoviedb.org/docs" target="_blank">
     <img src="https://img.shields.io/badge/TMDB-API-01B4E4?style=flat&logo=themoviedatabase&logoColor=white">
   </a>
 </p>
 
-<img src='https://github.com/user-attachments/assets/402f6ff0-b0f0-4382-827b-b7b06e33961d' title='Banner'>
+<img src="https://github.com/user-attachments/assets/402f6ff0-b0f0-4382-827b-b7b06e33961d" title="Banner">
 
 ## Table of Contents
 - [Problem Statement](#problem-statement)
@@ -57,36 +50,37 @@
 ## Problem Statement
 - With the rise of streaming services, viewers now have access to thousands of movies across platforms.
 - As a result, many viewers spend more time browsing than actually watching.
-- This problem can lead to frustration, lower satisfaction and reduced watch time on the platform.
-- Ultimately, this impacts both user experience and business performance.
+- This leads to frustration, lower satisfaction, and reduced watch time on the platform.
+- Ultimately, this affects both user experience and platform engagement.
 
 <hr>
 
 ## Overview
-- Built a content-based movie recommender system with a modular design and proper version control.
-- It processes metadata from 5,000+ movies to recommend the top 5 similar movies based on a user-selected title.
-- The system uses [`CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for text vectorization and [`cosine_similarity`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) to compute movie similarity.
+- Built a content-based movie recommender system trained on 5,000+ movie metadata records.
+- Generated the top 5 similar titles for any selected movie in under 3 seconds using cosine similarity.
+- Integrated the TMDB API to dynamically fetch and display movie posters, improving the user experience.
+- Deployed the system as a Streamlit web app, enabling users to explore personalized movie suggestions.
 
 <hr>
 
 ## How it Works
 
-- The dataset contains metadata for each movie, including title, keywords, genres, cast, crew, and overview.
+- The dataset contains metadata for each movie including title, keywords, genres, cast, crew, and overview.
 
 <details>
-<summary>Click Here</summary>
+<summary>Click Here to view the Data</summary>
 &nbsp;
-  
-<img src='https://github.com/user-attachments/assets/7196153c-f0a8-46cb-b47f-204b5db0cf46' title='Screenshot-1'>
+
+<img src='https://github.com/user-attachments/assets/b3ad9765-18db-4a52-b09a-6ae7223d0a1e' title='Screenshot-1'>
 </details>
 
 - All the features are combined into a new column called `tags` to create a unified representation for each movie.
 
 <details>
-<summary>Click Here</summary>
+<summary>Click Here to view the Data</summary>
 &nbsp;
 
-<img src='https://github.com/user-attachments/assets/9f019c4c-0c1b-4f87-acdc-1253dd791eea' title='Screenshot-2'>
+<img src='https://github.com/user-attachments/assets/9e3bb855-324b-4d7c-ae58-6884bc4c8038' title='Screenshot-2'>
 </details>
 
 - Text preprocessing is applied to the `tags` column :
@@ -95,10 +89,10 @@
   - Stemming is performed to reduce words to their root form (e.g., `"running"` becomes `"run"`).
 
 <details>
-<summary>Click Here</summary>
+<summary>Click Here to view the Data</summary>
 &nbsp;
 
-<img src='https://github.com/user-attachments/assets/54710f7c-b354-480f-b4be-b21b6333bacb' title='Screenshot-3'>
+<img src='https://github.com/user-attachments/assets/426a094d-8893-4772-9295-8eb4240f349c' title='Screenshot-3'>
 </details>
 
 - `CountVectorizer` is used to convert the `tags` column into numerical feature vectors.
@@ -117,46 +111,14 @@ Access the Streamlit Web Application [here](https://pickify.streamlit.app/) or C
 
 ## Workflow
 
-```mermaid
-flowchart LR
-
-  subgraph DP["Data Preparation"]
-    direction TB
-    A["Movie metadata dataset"] --> B["Clean and preprocess data"] --> C["Extract features"] --> D["Generate tags"]
-  end
-
-  subgraph FE["Feature Engineering"]
-    direction TB
-    E["Text preprocessing"] --> F["Vectorize tags (CountVectorizer)"]
-  end
-
-  subgraph RE["Recommendation Engine"]
-    direction TB
-    G["Compute similarity (cosine_similarity)"] --> H["Save similarity matrix (.pkl)"]
-  end
-
-  subgraph APP["Application Layer"]
-    direction TB
-    I["Streamlit app loads .pkl"] --> J["User selects a movie"] --> K["Recommend Top 5 movies"] --> L["Fetch posters (TMDB API)"] --> M["Display recommendations"]
-  end
-
-  DP --> FE --> RE --> APP
-
-  %% Minimal dark mode styling (GitHub-safe)
-  classDef block fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#ffffff;
-  classDef step  fill:#161b22,stroke:#8b949e,stroke-width:1px,color:#ffffff;
-
-  class A,B,C,D,E,F,G,H,I,J,K,L,M step;
-  class DP,FE,RE,APP block;
-```
+<img alt="Mermaid Diagram" src="https://github.com/user-attachments/assets/aa5a4e5b-2a44-4aa3-a88a-84a14b220ba7">
 
 <hr>
 
 ## Impact
+- Served 100+ users through a deployed web app, turning a notebook model into a live recommendation system.
 - Delivered movie recommendations in under 3 seconds, ensuring a fast and smooth user experience.
-- Reduced the time users spend browsing by suggesting the top 5 most similar movies for any selected title.
-- Deployed the system as a Streamlit web app, used by 100+ users to discover personalized movie suggestions.
-- Demonstrated how a notebook model can move from experimentation to a live recommendation system.
+- Reduced browsing time by instantly suggesting the top 5 most similar movies for any selected title.
 
 <hr>
 
@@ -184,7 +146,7 @@ sys.path.append(os.path.abspath("../utils"))
 ### Example
 - This is one of the functions I added to my project as the `export_data.py` module in the `utils/` directory.
 <details>
-<summary>View Example Function</summary>
+<summary>Click Here to View Example Function</summary>
 <br>
 
 ```python
@@ -245,7 +207,7 @@ def export_as_csv(dataframe, folder_name, file_name):
 - Makes deployment and collaboration easier without manual path updates.
 
 <details>
-<summary>View Example Function</summary>
+<summary>Click Here to View Code Snippet</summary>
 <br>
   
 ```python
@@ -277,11 +239,6 @@ api_key = st.secrets["tmdb"]["api_key"]
 > 
 > When deploying to Streamlit, the API key must be added via the GUI, not through the `secrets.toml` file.
 
-<details>
-<summary>Click Here</summary>
-<img src='https://github.com/user-attachments/assets/529ae232-8635-479d-9b8f-d089b5688e7a' title='Streamlit UI'>
-</details>
-
 <hr>
 
 ### 4. Accessing Large Files with `gdown`
@@ -300,7 +257,7 @@ api_key = st.secrets["tmdb"]["api_key"]
   - Hassle-free experience for cloning the repository or running the app across different environments.
 
 <details>
-<summary>View Example Function</summary>
+<summary>Click Here to View Code Snippet</summary>
 <br>
 
 ```python
@@ -445,14 +402,14 @@ Pickify/
 #### Challenge 1 : Dynamic File Paths
 - **Solution :** Used Python's `os` module for dynamic, platform-independent path handling.
 
-#### Challenge 2 : Managing Large Files
-- **Solution :** Used Google Drive to host the serialized similarity matrix and downloaded it at runtime using `gdown`.
+#### Challenge 2 : Reusability and Scalability
+- **Solution :** Structured the project with modular scripts inside the `utils/` package.
 
 #### Challenge 3 : Hiding Sensitive API Keys
 - **Solution :** Used Streamlit `st.secrets` to securely store and access TMDB API credentials.
 
-#### Challenge 4 : Reusability and Scalability
-- **Solution :** Structured the project with modular scripts inside the `utils/` package.
+#### Challenge 4 : Managing Large Files
+- **Solution :** Used Google Drive to host the serialized similarity matrix and download it at runtime using `gdown`.
 
 <hr>
 
