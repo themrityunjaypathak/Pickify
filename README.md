@@ -69,18 +69,18 @@
 
 <details>
 <summary>Click Here to view the Data</summary>
-&nbsp;
+<br>
 
-<img src='https://github.com/user-attachments/assets/b3ad9765-18db-4a52-b09a-6ae7223d0a1e' title='Screenshot-1'>
+<img src='https://github.com/user-attachments/assets/c945f7a6-2f3b-4f66-bbeb-89ca1a071073' title='Screenshot-1'>
 </details>
 
 - All the features are combined into a new column called `tags` to create a unified representation for each movie.
 
 <details>
 <summary>Click Here to view the Data</summary>
-&nbsp;
+<br>
 
-<img src='https://github.com/user-attachments/assets/9e3bb855-324b-4d7c-ae58-6884bc4c8038' title='Screenshot-2'>
+<img src='https://github.com/user-attachments/assets/18fae5c0-1885-455f-a2ea-019aaa1741aa' title='Screenshot-2'>
 </details>
 
 - Text preprocessing is applied to the `tags` column :
@@ -90,9 +90,9 @@
 
 <details>
 <summary>Click Here to view the Data</summary>
-&nbsp;
+<br>
 
-<img src='https://github.com/user-attachments/assets/426a094d-8893-4772-9295-8eb4240f349c' title='Screenshot-3'>
+<img src='https://github.com/user-attachments/assets/b19384f9-62e4-40dd-806b-d23038cf2c5c' title='Screenshot-3'>
 </details>
 
 - `CountVectorizer` is used to convert the `tags` column into numerical feature vectors.
