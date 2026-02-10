@@ -48,10 +48,10 @@
 <hr>
 
 ## Problem Statement
-- With the rise of streaming services, viewers now have access to thousands of movies across platforms.
-- As a result, many viewers spend more time browsing than actually watching.
+- With the rise of streaming services, users now have access to thousands of movies across platforms.
+- As a result, many viewers spend more time browsing than watching content.
 - This leads to frustration, lower satisfaction, and reduced watch time on the platform.
-- Ultimately, this affects both user experience and platform engagement.
+- Over time, this impacts both user retention and platform engagement.
 
 <hr>
 
@@ -116,9 +116,10 @@ Access the Streamlit Web Application [here](https://pickify.streamlit.app/) or C
 <hr>
 
 ## Impact
-- Served 100+ users through a deployed web app, turning a notebook model into a live recommendation system.
-- Delivered movie recommendations in under 3 seconds, ensuring a fast and smooth user experience.
 - Reduced browsing time by instantly suggesting the top 5 most similar movies for any selected title.
+- Delivered movie recommendations in under 3 seconds, ensuring a fast and smooth user experience.
+- Improved content engagement by guiding users toward relevant titles instead of manual browsing.
+- Served 100+ users through a deployed web app, turning a notebook model into a live recommendation system.
 
 <hr>
 
