@@ -1,34 +1,16 @@
 <h2 align='center'>Pickify : Movie Recommender System</h2>
 
-<p align="center">
-  <a href="https://pickify.streamlit.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white">
-  </a>
+<div align="center">
 
-  <a href="https://www.python.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white">
-  </a>
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://pickify.streamlit.app/)
+[![Python](https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-v2.2-150458?style=flat&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-v1.44-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Scikit-Learn](https://img.shields.io/badge/scikit--learn-v1.5-F7931E?style=flat&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/)
+[![Git](https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white)](https://git-scm.com/)
+[![TMDB API](https://img.shields.io/badge/TMDB-API-01B4E4?style=flat&logo=themoviedatabase&logoColor=white)](https://developer.themoviedb.org/docs)
 
-  <a href="https://pandas.pydata.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Pandas-v2.2-150458?style=flat&logo=pandas&logoColor=white">
-  </a>
-
-  <a href="https://streamlit.io/" target="_blank">
-    <img src="https://img.shields.io/badge/Streamlit-v1.44-FF4B4B?style=flat&logo=streamlit&logoColor=white">
-  </a>
-
-  <a href="https://scikit-learn.org/stable/" target="_blank">
-    <img src="https://img.shields.io/badge/scikit--learn-v1.5-F7931E?style=flat&logo=scikit-learn&logoColor=white">
-  </a>
-
-  <a href="https://git-scm.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white">
-  </a>
-
-  <a href="https://developer.themoviedb.org/docs" target="_blank">
-    <img src="https://img.shields.io/badge/TMDB-API-01B4E4?style=flat&logo=themoviedatabase&logoColor=white">
-  </a>
-</p>
+</div>
 
 <img src="https://github.com/user-attachments/assets/402f6ff0-b0f0-4382-827b-b7b06e33961d" title="Banner">
 
